@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { SiteHeader } from "@/components/site-chrome";
 import { blogPosts, getPost } from "@/lib/blog";
 
 type PageProps = {
@@ -54,24 +55,9 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <main className="min-h-screen overflow-hidden bg-[#efe5d2] text-[#201a13]">
       <div className="pointer-events-none fixed inset-0 z-10 opacity-[0.08] [background-image:radial-gradient(#3d2f23_0.8px,transparent_0.8px)] [background-size:18px_18px]" />
-      <header className="relative z-20 mx-auto max-w-7xl px-4 pt-5 sm:px-8 lg:px-10">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between rounded-full bg-[#fffaf0]/86 p-2 shadow-[0_16px_50px_rgba(67,48,31,0.12)] ring-1 ring-stone-950/10">
-          <Link
-            href="/"
-            className="rounded-full px-4 py-2 text-sm font-black tracking-[-0.01em]"
-          >
-            Iron County Museum
-          </Link>
-          <Link
-            href="/blog"
-            className="rounded-full px-4 py-2 text-sm font-medium text-stone-600 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-stone-950/5 hover:text-stone-950"
-          >
-            Blog
-          </Link>
-        </nav>
-      </header>
+      <SiteHeader />
 
-      <article className="relative mx-auto max-w-5xl px-4 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <article className="relative mx-auto max-w-5xl px-4 pb-20 pt-36 sm:px-8 sm:pb-28 sm:pt-44 lg:px-10">
         <div className="animate-rise">
           <Label>{post.category}</Label>
           <h1 className="mt-6 max-w-4xl text-balance font-serif text-6xl leading-[0.9] tracking-[-0.04em] sm:text-7xl lg:text-8xl">

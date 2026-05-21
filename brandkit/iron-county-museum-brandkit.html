@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Iron County Museum Brand Kit</title>
+    <style>
+      @page {
+        size: letter landscape;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #efe5d2;
+        color: #201a13;
+        font-family:
+          Avenir Next,
+          Segoe UI,
+          system-ui,
+          sans-serif;
+      }
+
+      .page {
+        width: 11in;
+        height: 8.5in;
+        padding: 0.45in;
+        page-break-after: always;
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            circle at 16% 16%,
+            rgba(138, 90, 45, 0.18),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 82% 4%,
+            rgba(47, 74, 50, 0.18),
+            transparent 30%
+          ),
+          #efe5d2;
+      }
+
+      .page.dark {
+        background:
+          radial-gradient(
+            circle at 18% 12%,
+            rgba(205, 160, 92, 0.16),
+            transparent 31%
+          ),
+          radial-gradient(
+            circle at 82% 20%,
+            rgba(111, 132, 92, 0.14),
+            transparent 28%
+          ),
+          #201a13;
+        color: #fffaf0;
+      }
+
+      .grain {
+        position: absolute;
+        inset: 0;
+        opacity: 0.06;
+        background-image: radial-gradient(#201a13 0.7px, transparent 0.7px);
+        background-size: 16px 16px;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.16in;
+        height: 100%;
+      }
+
+      .panel {
+        background: rgba(255, 250, 240, 0.86);
+        border-radius: 0.28in;
+        padding: 0.24in;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.9),
+          0 18px 46px rgba(67, 48, 31, 0.12);
+      }
+
+      .dark .panel {
+        background: rgba(255, 250, 240, 0.08);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.14),
+          0 18px 46px rgba(0, 0, 0, 0.18);
+      }
+
+      .span-3 {
+        grid-column: span 3;
+      }
+
+      .span-4 {
+        grid-column: span 4;
+      }
+
+      .span-5 {
+        grid-column: span 5;
+      }
+
+      .span-6 {
+        grid-column: span 6;
+      }
+
+      .span-7 {
+        grid-column: span 7;
+      }
+
+      .span-8 {
+        grid-column: span 8;
+      }
+
+      .span-12 {
+        grid-column: span 12;
+      }
+
+      .tall {
+        grid-row: span 2;
+      }
+
+      .label {
+        margin: 0 0 0.16in;
+        color: #8a5a2d;
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .dark .label {
+        color: #d5a35f;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 7.6in;
+        font-family:
+          Iowan Old Style,
+          Georgia,
+          serif;
+        font-size: 58pt;
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+      }
+
+      h2 {
+        font-family:
+          Iowan Old Style,
+          Georgia,
+          serif;
+        font-size: 34pt;
+        line-height: 0.94;
+        letter-spacing: -0.045em;
+      }
+
+      h3 {
+        font-size: 17pt;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+
+      p {
+        color: #5f5448;
+        font-size: 11pt;
+        line-height: 1.45;
+      }
+
+      .dark p {
+        color: #d9cdbb;
+      }
+
+      .hero-copy {
+        max-width: 4.7in;
+        margin-top: 0.28in;
+        font-size: 14pt;
+      }
+
+      .mark {
+        width: 1.72in;
+        height: 1.72in;
+        border-radius: 0.42in;
+        background: #2f4a32;
+        position: relative;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      }
+
+      .mark:before {
+        content: "";
+        position: absolute;
+        left: 0.42in;
+        top: 0.34in;
+        width: 0.9in;
+        height: 0.98in;
+        border: 0.09in solid #fffaf0;
+        border-top-width: 0.14in;
+        border-bottom-left-radius: 0.08in;
+        border-bottom-right-radius: 0.08in;
+      }
+
+      .mark:after {
+        content: "";
+        position: absolute;
+        left: 0.7in;
+        top: 0.12in;
+        width: 0.58in;
+        height: 0.58in;
+        border-left: 0.1in solid #d5a35f;
+        border-top: 0.1in solid #d5a35f;
+        transform: rotate(45deg);
+      }
+
+      .wordmark {
+        margin-top: 0.24in;
+        font-family:
+          Iowan Old Style,
+          Georgia,
+          serif;
+        font-size: 30pt;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+      }
+
+      .subline {
+        margin-top: 0.12in;
+        color: #8a5a2d;
+        font-size: 8pt;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .swatches {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.08in;
+        margin-top: 0.18in;
+      }
+
+      .swatch {
+        height: 0.75in;
+        border-radius: 0.16in;
+        padding: 0.08in;
+        color: #fffaf0;
+        font-size: 7pt;
+        font-weight: 700;
+        display: flex;
+        align-items: end;
+      }
+
+      .cream {
+        color: #201a13;
+        background: #fffaf0;
+      }
+
+      .parchment {
+        color: #201a13;
+        background: #efe5d2;
+      }
+
+      .charcoal {
+        background: #201a13;
+      }
+
+      .forest {
+        background: #2f4a32;
+      }
+
+      .ochre {
+        background: #8a5a2d;
+      }
+
+      .image-block {
+        border-radius: 0.22in;
+        min-height: 1.72in;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(32, 26, 19, 0.05),
+            rgba(32, 26, 19, 0.55)
+          ),
+          radial-gradient(circle at 25% 30%, #d5a35f 0, transparent 18%),
+          linear-gradient(135deg, #6f845c, #2f4a32 45%, #201a13);
+      }
+
+      .line-list {
+        display: grid;
+        gap: 0.08in;
+        margin-top: 0.16in;
+      }
+
+      .line {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.2in;
+        padding: 0.11in 0;
+        border-bottom: 1px solid rgba(32, 26, 19, 0.12);
+        font-size: 10pt;
+      }
+
+      .dark .line {
+        border-bottom-color: rgba(255, 250, 240, 0.14);
+      }
+
+      .mono {
+        font-family: SFMono-Regular, Consolas, monospace;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.08in;
+        margin-top: 0.18in;
+      }
+
+      .badge {
+        border-radius: 999px;
+        background: rgba(47, 74, 50, 0.12);
+        padding: 0.08in 0.12in;
+        color: #2f4a32;
+        font-size: 8pt;
+        font-weight: 700;
+      }
+
+      .dark .badge {
+        background: rgba(255, 250, 240, 0.12);
+        color: #fffaf0;
+      }
+
+      .footer {
+        position: absolute;
+        left: 0.45in;
+        right: 0.45in;
+        bottom: 0.25in;
+        display: flex;
+        justify-content: space-between;
+        color: rgba(32, 26, 19, 0.46);
+        font-size: 7pt;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        z-index: 3;
+      }
+
+      .dark .footer {
+        color: rgba(255, 250, 240, 0.46);
+      }
+
+      .type-large {
+        font-family:
+          Iowan Old Style,
+          Georgia,
+          serif;
+        font-size: 42pt;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+      }
+
+      .stationery {
+        height: 2.2in;
+        border-radius: 0.2in;
+        background: linear-gradient(90deg, #fffaf0 0 68%, #2f4a32 68%), #fffaf0;
+        box-shadow: 0 18px 46px rgba(32, 26, 19, 0.16);
+        position: relative;
+      }
+
+      .stationery .mini-mark {
+        position: absolute;
+        left: 0.25in;
+        top: 0.25in;
+        width: 0.42in;
+        height: 0.42in;
+        border-radius: 0.11in;
+        background: #2f4a32;
+      }
+
+      .stationery .rule {
+        position: absolute;
+        left: 0.25in;
+        right: 1.8in;
+        bottom: 0.3in;
+        height: 1px;
+        background: rgba(32, 26, 19, 0.18);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page dark">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="grid">
+          <div class="panel span-5 tall">
+            <div class="mark"></div>
+            <div class="wordmark">Iron County<br />Museum</div>
+            <div class="subline">Caspian, Michigan / Historical Society</div>
+          </div>
+          <div class="panel span-7 tall">
+            <p class="label">Brand idea</p>
+            <h1>Local memory, kept in living form.</h1>
+            <p class="hero-copy">
+              A warm, grounded identity for a museum campus of cabins,
+              galleries, archives, and local stories. The system should feel
+              tactile, trustworthy, outdoors-aware, and quietly contemporary.
+            </p>
+          </div>
+          <div class="panel span-4">
+            <p class="label">Category</p>
+            <h3>Outdoor heritage museum</h3>
+            <p style="margin-top: 0.12in">
+              25 buildings, 100+ exhibits, art galleries, archives, events, and
+              community programs.
+            </p>
+          </div>
+          <div class="panel span-4">
+            <p class="label">Audience</p>
+            <h3>Visitors, families, schools, donors</h3>
+            <p style="margin-top: 0.12in">
+              People who need clear planning details and a reason to spend a
+              full day with regional history.
+            </p>
+          </div>
+          <div class="panel span-4">
+            <p class="label">Tone</p>
+            <h3>Historic, tactile, generous</h3>
+            <p style="margin-top: 0.12in">
+              Avoid generic nostalgia. Lead with confidence, usefulness, and
+              material warmth.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span>Brand kit / 01</span><span>ironcountymuseum.org</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="grid">
+          <div class="panel span-4 tall">
+            <p class="label">Logo concept</p>
+            <div class="mark"></div>
+            <p style="margin-top: 0.22in">
+              The mark combines a cabin frame, museum doorway, and upward
+              roofline. It should work as a campus sign, favicon, social avatar,
+              exhibit badge, and donor seal.
+            </p>
+          </div>
+          <div class="panel span-4 tall">
+            <p class="label">Construction</p>
+            <div
+              style="
+                height: 2.25in;
+                border-radius: 0.18in;
+                background-image:
+                  linear-gradient(rgba(32, 26, 19, 0.12) 1px, transparent 1px),
+                  linear-gradient(
+                    90deg,
+                    rgba(32, 26, 19, 0.12) 1px,
+                    transparent 1px
+                  );
+                background-size: 0.25in 0.25in;
+                position: relative;
+              "
+            >
+              <div
+                class="mark"
+                style="
+                  position: absolute;
+                  left: 0.55in;
+                  top: 0.28in;
+                  transform: scale(0.9);
+                "
+              ></div>
+            </div>
+            <p style="margin-top: 0.16in">
+              Geometry stays reduced: one protected interior, one roof gesture,
+              one entrance.
+            </p>
+          </div>
+          <div class="panel span-4 tall">
+            <p class="label">Wordmark behavior</p>
+            <div class="wordmark" style="color: #201a13">
+              Iron County<br />Museum
+            </div>
+            <p style="margin-top: 0.18in">
+              Serif display type carries institutional trust. Sans text keeps
+              visitor information practical and clear.
+            </p>
+          </div>
+          <div class="panel span-12">
+            <p class="label">Color system</p>
+            <div class="swatches">
+              <div class="swatch cream">Cream<br />#FFFAF0</div>
+              <div class="swatch parchment">Parchment<br />#EFE5D2</div>
+              <div class="swatch charcoal">Charcoal<br />#201A13</div>
+              <div class="swatch forest">Museum Green<br />#2F4A32</div>
+              <div class="swatch ochre">Iron Ochre<br />#8A5A2D</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span>Brand kit / 02</span><span>Logo and color</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="grid">
+          <div class="panel span-7 tall">
+            <p class="label">Typography</p>
+            <div class="type-large">A full day with Iron County's past.</div>
+            <p style="margin-top: 0.22in; max-width: 4.8in">
+              Display: Iowan Old Style or Georgia. Body: Avenir Next or system
+              sans. Use tight display spacing, generous body leading, and small
+              uppercase labels sparingly.
+            </p>
+          </div>
+          <div class="panel span-5 tall">
+            <p class="label">Message pillars</p>
+            <div class="line-list">
+              <div class="line">
+                <span>Campus scale</span><strong>25 buildings</strong>
+              </div>
+              <div class="line">
+                <span>Collection depth</span><strong>100+ exhibits</strong>
+              </div>
+              <div class="line">
+                <span>Signature claim</span><strong>Log Cabin Capital</strong>
+              </div>
+              <div class="line">
+                <span>Visitor promise</span><strong>2-4 hour visit</strong>
+              </div>
+              <div class="line">
+                <span>Community role</span><strong>Archives and events</strong>
+              </div>
+            </div>
+          </div>
+          <div class="panel span-4">
+            <p class="label">Voice</p>
+            <h3>Clear, warm, specific.</h3>
+            <p style="margin-top: 0.12in">
+              Say what visitors can do, when they can come, and why the place
+              matters.
+            </p>
+          </div>
+          <div class="panel span-4">
+            <p class="label">Avoid</p>
+            <h3>Theme-park nostalgia.</h3>
+            <p style="margin-top: 0.12in">
+              No fake vintage clutter, clipart crests, or sepia everything.
+            </p>
+          </div>
+          <div class="panel span-4">
+            <p class="label">Taglines</p>
+            <div class="badge-row">
+              <span class="badge">A full day with the past</span>
+              <span class="badge">Local memory, kept close</span>
+              <span class="badge">Walk through Iron County</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span>Brand kit / 03</span><span>Type and voice</span>
+      </div>
+    </section>
+
+    <section class="page dark">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="grid">
+          <div class="panel span-5 tall">
+            <p class="label">Digital application</p>
+            <div
+              style="
+                height: 3.7in;
+                border-radius: 0.22in;
+                background: #fffaf0;
+                color: #201a13;
+                padding: 0.18in;
+                box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <strong>Iron County Museum</strong>
+                <span class="badge">Plan visit</span>
+              </div>
+              <div
+                style="
+                  margin-top: 0.55in;
+                  font-family:
+                    Iowan Old Style,
+                    Georgia,
+                    serif;
+                  font-size: 34pt;
+                  line-height: 0.95;
+                "
+              >
+                Give yourself time to wander.
+              </div>
+              <p style="margin-top: 0.18in; max-width: 3.4in">
+                Exhibits open June through September. Office, gift shop, and
+                archives open year-round.
+              </p>
+            </div>
+          </div>
+          <div class="panel span-4 tall">
+            <p class="label">Image direction</p>
+            <div class="image-block"></div>
+            <p style="margin-top: 0.18in">
+              Use warm exterior photography, tactile material crops, cabin
+              details, archival textures, and gallery closeups. Keep people
+              candid and real when included.
+            </p>
+          </div>
+          <div class="panel span-3 tall">
+            <p class="label">Stationery</p>
+            <div class="stationery">
+              <div class="mini-mark"></div>
+              <div class="rule"></div>
+            </div>
+            <p style="margin-top: 0.16in">
+              Membership cards, donor letters, exhibit labels, and wayfinding
+              should share the same calm grid.
+            </p>
+          </div>
+          <div class="panel span-12">
+            <p class="label">System details</p>
+            <div class="badge-row">
+              <span class="badge">Visit</span>
+              <span class="badge">Exhibits</span>
+              <span class="badge">Archives</span>
+              <span class="badge">Events</span>
+              <span class="badge">Membership</span>
+              <span class="badge mono">100 Brady Ave</span>
+              <span class="badge mono">(906) 265-2617</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span>Brand kit / 04</span><span>Applications</span>
+      </div>
+    </section>
+  </body>
+</html>

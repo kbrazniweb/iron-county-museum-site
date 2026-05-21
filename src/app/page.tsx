@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SiteHeader } from "@/components/site-chrome";
 import { blogPosts } from "@/lib/blog";
 
 const exhibits = [
@@ -61,8 +62,6 @@ const events = [
   },
 ];
 
-const navItems = ["Visit", "Exhibits", "Events", "Blog", "Support"];
-
 function Arrow() {
   return (
     <span
@@ -111,37 +110,7 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-0 z-10 opacity-[0.08] [background-image:radial-gradient(#3d2f23_0.8px,transparent_0.8px)] [background-size:18px_18px]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[48rem] bg-[radial-gradient(circle_at_20%_12%,rgba(138,90,45,0.22),transparent_32%),radial-gradient(circle_at_80%_0%,rgba(63,88,66,0.2),transparent_30%)]" />
 
-      <header className="relative z-20 mx-auto max-w-7xl px-4 pt-5 sm:px-8 lg:px-10">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between rounded-full bg-[#fffaf0]/86 p-2 shadow-[0_16px_50px_rgba(67,48,31,0.12)] ring-1 ring-stone-950/10">
-          <a
-            href="#top"
-            className="rounded-full px-4 py-2 text-sm font-black tracking-[-0.01em]"
-            aria-label="Iron County Museum home"
-          >
-            Iron County Museum
-          </a>
-          <div className="hidden items-center gap-1 text-sm font-medium text-stone-600 md:flex">
-            {navItems.map((item) => (
-              <a
-                href={item === "Blog" ? "/blog" : `#${item.toLowerCase()}`}
-                key={item}
-                className="rounded-full px-4 py-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-stone-950/5 hover:text-stone-950"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-          <a
-            href="tel:+19062652617"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#2f4a32] py-1.5 pl-4 pr-1.5 text-sm font-bold text-[#fffaf0] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#243a27] active:scale-[0.98]"
-          >
-            Call
-            <span className="grid size-8 place-items-center rounded-full bg-white/12 text-xs transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 group-hover:bg-[#fffaf0] group-hover:text-[#243a27]">
-              →
-            </span>
-          </a>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <section
         id="top"
