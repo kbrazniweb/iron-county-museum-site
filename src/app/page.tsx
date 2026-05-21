@@ -62,17 +62,6 @@ const events = [
   },
 ];
 
-function Arrow() {
-  return (
-    <span
-      aria-hidden="true"
-      className="grid size-8 place-items-center rounded-full bg-stone-950/10 text-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 group-hover:bg-stone-950 group-hover:text-[#f6efe3]"
-    >
-      ↗
-    </span>
-  );
-}
-
 function Label({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[#8a5a2d]">
@@ -108,71 +97,69 @@ export default function Home() {
       </a>
 
       <div className="pointer-events-none fixed inset-0 z-10 opacity-[0.08] [background-image:radial-gradient(#3d2f23_0.8px,transparent_0.8px)] [background-size:18px_18px]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[48rem] bg-[radial-gradient(circle_at_20%_12%,rgba(138,90,45,0.22),transparent_32%),radial-gradient(circle_at_80%_0%,rgba(63,88,66,0.2),transparent_30%)]" />
 
       <SiteHeader />
 
       <section
         id="top"
-        className="relative mx-auto grid min-h-[100dvh] max-w-7xl gap-10 px-4 py-20 sm:px-8 sm:py-28 md:grid-cols-[0.95fr_1.05fr] md:items-center lg:px-10"
+        className="relative isolate flex min-h-[100dvh] items-end overflow-hidden px-4 pb-16 pt-36 text-[#fffaf0] sm:px-8 sm:pb-24 lg:px-10"
       >
-        <div className="animate-rise">
-          <Label>Caspian, Michigan</Label>
-          <h1 className="mt-6 max-w-4xl text-balance font-serif text-6xl leading-[0.9] tracking-[-0.04em] text-[#201a13] sm:text-7xl lg:text-8xl">
-            A full day with Iron County&apos;s past.
-          </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-stone-700 sm:text-xl">
-            Explore one of the Upper Peninsula&apos;s largest outdoor museum
-            complexes: 25 buildings, 100+ exhibits, two art galleries, and the
-            state-designated Log Cabin Capital of Michigan.
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#visit"
-              className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#201a13] py-2 pl-6 pr-2 text-base font-bold text-[#fffaf0] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#3a2d20] active:scale-[0.98]"
-            >
-              Plan your visit
-              <span className="grid size-8 place-items-center rounded-full bg-white/12 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 group-hover:bg-[#fffaf0] group-hover:text-[#201a13]">
-                ↓
-              </span>
-            </a>
-            <a
-              href="#exhibits"
-              className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#fffaf0] py-2 pl-6 pr-2 text-base font-bold text-[#201a13] shadow-[0_14px_40px_rgba(67,48,31,0.1)] ring-1 ring-stone-950/10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-white active:scale-[0.98]"
-            >
-              See exhibits
-              <Arrow />
-            </a>
-          </div>
-        </div>
-
-        <Frame className="animate-rise animation-delay-150">
-          <div className="relative min-h-[560px] overflow-hidden rounded-[calc(2rem-0.375rem)]">
-            <Image
-              src="https://i0.wp.com/ironcountymuseum.org/wp-content/uploads/2022/06/Log-Cabin.jpeg?w=1600&ssl=1"
-              alt="Historic log cabin exhibit at the Iron County Museum"
-              fill
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,26,19,0.05),rgba(32,26,19,0.62))]" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-              <div className="max-w-md rounded-[1.5rem] bg-[#fffaf0]/92 p-5 shadow-[0_18px_60px_rgba(32,26,19,0.22)]">
-                <p className="text-sm font-semibold text-[#8a5a2d]">
-                  Open season
-                </p>
-                <p className="mt-2 text-3xl font-black tracking-[-0.03em]">
-                  June through September
-                </p>
-                <p className="mt-3 leading-7 text-stone-700">
-                  Office, gift shop, and archives are open year-round on
-                  weekdays.
-                </p>
-              </div>
+        <Image
+          src="https://i0.wp.com/ironcountymuseum.org/wp-content/uploads/2022/06/Log-Cabin.jpeg?w=2000&ssl=1"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-20 object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(32,26,19,0.1)_0%,rgba(32,26,19,0.5)_44%,rgba(32,26,19,0.94)_100%)]" />
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="animate-rise max-w-5xl">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#d5a35f]">
+              Caspian, Michigan
+            </p>
+            <h1 className="mt-6 max-w-5xl text-balance font-serif text-6xl leading-[0.9] tracking-[-0.04em] sm:text-7xl lg:text-8xl">
+              A full day with Iron County&apos;s past.
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#eadfce] sm:text-xl">
+              Explore one of the Upper Peninsula&apos;s largest outdoor museum
+              complexes: 25 buildings, 100+ exhibits, two art galleries, and the
+              state-designated Log Cabin Capital of Michigan.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#visit"
+                className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#fffaf0] py-2 pl-6 pr-2 text-base font-bold text-[#201a13] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-white active:scale-[0.98]"
+              >
+                Plan your visit
+                <span className="grid size-8 place-items-center rounded-full bg-stone-950/10 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 group-hover:bg-[#201a13] group-hover:text-[#fffaf0]">
+                  ↓
+                </span>
+              </a>
+              <a
+                href="#exhibits"
+                className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-white/10 py-2 pl-6 pr-2 text-base font-bold text-[#fffaf0] ring-1 ring-white/20 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-white/16 active:scale-[0.98]"
+              >
+                See exhibits
+                <span
+                  aria-hidden="true"
+                  className="grid size-8 place-items-center rounded-full bg-white/12 text-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 group-hover:bg-[#fffaf0] group-hover:text-[#201a13]"
+                >
+                  ↗
+                </span>
+              </a>
             </div>
           </div>
-        </Frame>
+          <div className="animate-rise animation-delay-150 max-w-sm rounded-[1.5rem] bg-[#fffaf0]/92 p-5 text-[#201a13] shadow-[0_18px_60px_rgba(32,26,19,0.22)]">
+            <p className="text-sm font-semibold text-[#8a5a2d]">Open season</p>
+            <p className="mt-2 text-3xl font-black tracking-[-0.03em]">
+              June through September
+            </p>
+            <p className="mt-3 leading-7 text-stone-700">
+              Office, gift shop, and archives are open year-round on weekdays.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section
