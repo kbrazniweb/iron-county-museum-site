@@ -1,6 +1,7 @@
 # Iron County Museum Site
 
 Redesigned one-page Next.js site for the Iron County Historical Museum in Caspian, Michigan.
+Includes a static blog with pre-rendered article pages.
 
 Source content was adapted from the public museum website:
 

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { blogPosts } from "@/lib/blog";
 
 const exhibits = [
   {
@@ -59,7 +61,7 @@ const events = [
   },
 ];
 
-const navItems = ["Visit", "Exhibits", "Events", "Support"];
+const navItems = ["Visit", "Exhibits", "Events", "Blog", "Support"];
 
 function Arrow() {
   return (
@@ -121,7 +123,7 @@ export default function Home() {
           <div className="hidden items-center gap-1 text-sm font-medium text-stone-600 md:flex">
             {navItems.map((item) => (
               <a
-                href={`#${item.toLowerCase()}`}
+                href={item === "Blog" ? "/blog" : `#${item.toLowerCase()}`}
                 key={item}
                 className="rounded-full px-4 py-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-stone-950/5 hover:text-stone-950"
               >
@@ -349,6 +351,63 @@ export default function Home() {
             </div>
           </div>
         </Frame>
+      </section>
+
+      <section
+        id="blog"
+        className="relative mx-auto max-w-7xl px-4 py-24 sm:px-8 lg:px-10 lg:py-32"
+      >
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div className="animate-rise">
+            <Label>Blog</Label>
+            <h2 className="mt-5 max-w-2xl text-balance font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl">
+              Stories from the grounds and galleries.
+            </h2>
+          </div>
+          <div className="animate-rise max-w-2xl lg:justify-self-end">
+            <p className="text-lg leading-8 text-stone-700">
+              Short exhibit notes, visitor guides, and local history pieces for
+              people planning a trip or revisiting a favorite room.
+            </p>
+            <Link
+              href="/blog"
+              className="group mt-7 inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#201a13] py-2 pl-6 pr-2 text-base font-bold text-[#fffaf0] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#3a2d20] active:scale-[0.98]"
+            >
+              View all stories
+              <span className="grid size-8 place-items-center rounded-full bg-white/12 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 group-hover:bg-[#fffaf0] group-hover:text-[#201a13]">
+                →
+              </span>
+            </Link>
+          </div>
+        </div>
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {blogPosts.slice(0, 3).map((post) => (
+            <Frame key={post.slug} className="animate-rise">
+              <article className="flex h-full flex-col p-6">
+                <p className="text-sm font-semibold text-[#8a5a2d]">
+                  {post.category} / {post.readTime}
+                </p>
+                <h3 className="mt-4 text-3xl font-black tracking-[-0.04em]">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[#8a5a2d]"
+                  >
+                    {post.title}
+                  </Link>
+                </h3>
+                <p className="mt-4 flex-1 leading-7 text-stone-700">
+                  {post.dek}
+                </p>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="mt-7 text-sm font-black text-[#201a13] underline decoration-[#8a5a2d]/40 underline-offset-4 transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[#8a5a2d]"
+                >
+                  Read article
+                </Link>
+              </article>
+            </Frame>
+          ))}
+        </div>
       </section>
 
       <section
